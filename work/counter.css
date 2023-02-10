@@ -1,0 +1,22 @@
+body{
+  background-color: rgba(199, 247, 199, 0.336);
+  
+ 
+}
+th,
+td {
+border: 2px solid #333;
+/* background-color: #333; */
+color: rgb(0, 0, 0);
+font-size: 35px;
+}
+input{
+ 
+  width: 350px;
+font-size: 35px;
+}
+.demo{
+
+width: 350px;
+font-size: 35px;
+}

@@ -1,0 +1,274 @@
+<?php session_start(); ?>
+<?php require('db.php');?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>餐廳後台</title>
+    <link rel="stylesheet" href="./back.css">
+    <!-- <link rel="stylesheet" href="back.css"?v=1> -->
+ 
+
+   
+</head>
+
+<body>
+
+  <h1>餐廳後台畫面</h1>
+  <hr>
+  <table>
+  <tr>
+        <th>1桌:</th>
+        <th>2桌:</th>
+        <th>3桌:</th>
+        <th>4桌:</th>
+        <th>5桌:</th>
+      </tr>
+<tr>
+  <td>
+    <div class="div2">
+        <div id="demo1">
+        <?php 
+        $sql = "select tablenum, pname,num FROM addorder,menu WHERE addorder.mid = menu.mid and tablenum = '1'";
+        $result = $mysqli->query($sql);
+       
+         while($row = $result->fetch_assoc()) {
+        echo "{$row['pname']}: {$row['num']}<br>";
+      
+        }
+       
+        ?>
+        </div>
+      
+       
+      </div>
+      </td>
+    <td>
+    <div class="div2">
+        
+        <div id="demo2">
+        <?php 
+        $sql = "select tablenum, pname,num FROM addorder,menu WHERE addorder.mid = menu.mid and tablenum = '2'";
+        $result = $mysqli->query($sql);
+        
+         while($row = $result->fetch_assoc()) {
+        echo "{$row['pname']}: {$row['num']}<br>";
+       
+        }
+
+        ?>
+        </div>
+       
+        
+
+
+    </div>
+    </td>
+    <td>
+    <div class="div2">
+
+        <div id="demo3">
+        <?php 
+        $sql = "select tablenum, pname,num FROM addorder,menu WHERE addorder.mid = menu.mid and tablenum = '3'";
+        $result = $mysqli->query($sql);
+        
+         while($row = $result->fetch_assoc()) {
+        echo "{$row['pname']}: {$row['num']}<br>";
+        
+        }
+        ?>
+        </div>
+    </div>
+    </td>
+    <td>
+    <div class="div2">
+
+        <div id="demo4">
+        <?php 
+        $sql = "select tablenum, pname,num FROM addorder,menu WHERE addorder.mid = menu.mid and tablenum = '4'";
+        $result = $mysqli->query($sql);
+        
+         while($row = $result->fetch_assoc()) {
+        echo "{$row['pname']}: {$row['num']}<br>";
+        
+        }
+        ?>
+        </div>
+    </div>
+    </td>
+    <td>
+    <div class="div2">
+
+        <div id="demo5">
+        <?php 
+        $sql = "select tablenum, pname,num FROM addorder,menu WHERE addorder.mid = menu.mid and tablenum = '5'";
+        $result = $mysqli->query($sql);
+        
+         while($row = $result->fetch_assoc()) {
+        echo "{$row['pname']}: {$row['num']}<br>";
+        
+        }
+        ?>
+        </div>
+    </div>
+    </td>
+    </tr>
+    <tr>
+      <td>  <input type="button" value="刪除一行" onclick="clr(1,1)" />
+        <input type="button" value="復原一行" onclick="ret(1,1)" />
+        <input type="button" value="全部復原" onclick="clr(1,0)" />
+      </td>
+      <td>
+      <input type="button" value="刪除一行" onclick="clr(2,2)" />
+        <input type="button" value="復原一行" onclick="ret(2,2)" />
+        <input type="button" value="全部復原" onclick="clr(2,10)" />
+      </td>
+      <td>
+      <input type="button" value="刪除一行" onclick="clr(3,3)" />
+        <input type="button" value="復原一行" onclick="ret(3,3)" />
+        <input type="button" value="全部復原" onclick="clr(3,20)" />
+
+      </td>
+      <td>
+      <input type="button" value="刪除一行" onclick="clr(4,4)" />
+        <input type="button" value="復原一行" onclick="ret(4,4)" />
+        <input type="button" value="全部復原" onclick="clr(4,30)" />
+
+      </td>
+      <td>
+      <input type="button" value="刪除一行" onclick="clr(5,5)" />
+        <input type="button" value="復原一行" onclick="ret(5,5)" />
+        <input type="button" value="全部復原" onclick="clr(5,40)" />
+
+      </td>
+    </tr>
+  </table>
+   
+    <script>
+      
+      var cknum = 0;
+      var cknum2 = 0;
+      var cknum3 = 0;
+      var cknum4 = 0;
+      var cknum5 = 0;
+      function clr(e,f) {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+      document.getElementById("demo"+e).innerHTML = this.responseText;
+      }
+      //
+      switch (f){
+        case 0 :
+        cknum=-1;
+        break;
+        case 10 :
+        cknum2=-1;
+        break;
+        case 20 :
+        cknum3=-1;
+        break;
+        case 30 :
+        cknum4=-1;
+        break;
+        case 40 :
+        cknum5=-1;
+        break;
+      }
+      //
+      switch (e){
+        case 1 :
+        cknum ++;
+        break;
+        case 2 :
+        cknum2 ++;
+        break;
+        case 3 :
+        cknum3 ++;
+        break;
+        case 4 :
+        cknum4 ++;
+        break;
+        case 5 :
+        cknum5 ++;
+        break;
+      }
+    
+
+      var tid = e;
+      params = "tid="+tid+"&cknum="+cknum+"&cknum2="+cknum2+"&cknum3="+cknum3+"&cknum4="+cknum4+"&cknum5="+cknum5;
+      xhttp.open("POST", "updata.php", true);
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.send(params);
+      }
+
+      function ret(e) {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+      document.getElementById("demo"+e).innerHTML = this.responseText;
+      }
+      if(e==1&&cknum>0){
+        cknum --;
+      }
+      else if(e==2&&cknum2>0){
+        cknum2 --;
+      }
+      else if(e==3&&cknum3>0){
+        cknum3 --;
+      }
+      else if(e==4&&cknum4>0){
+        cknum4 --;
+      }
+      else if(e==5&&cknum5>0){
+        cknum5 --;
+      }
+      var tid = e;
+      params = "tid="+tid+"&cknum="+cknum+"&cknum2="+cknum2+"&cknum3="+cknum3+"&cknum4="+cknum4+"&cknum5="+cknum5;
+      xhttp.open("POST", "updata.php", true);
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.send(params);
+      }
+
+
+
+      function updata(e) {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+      document.getElementById("demo"+e).innerHTML = this.responseText;
+  
+      }
+
+     
+       
+    
+
+      var tid = e;
+      params = "tid="+tid+"&cknum="+cknum+"&cknum2="+cknum2+"&cknum3="+cknum3+"&cknum4="+cknum4+"&cknum5="+cknum5;
+      xhttp.open("POST", "updata.php", true);
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.send(params);
+      
+      }
+ 
+
+      function doupdata(){
+        setTimeout(doupdata, 1000);
+        updata(1);
+        updata(2);
+        updata(3);
+        updata(4);
+        updata(5);
+      }
+
+      doupdata();
+
+  
+    
+
+      
+
+    </script>
+</body>
+</html>

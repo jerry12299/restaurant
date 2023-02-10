@@ -1,0 +1,10 @@
+SELECT tablenum, pname,num,price,num*price as amount FROM addorder,menu WHERE addorder.mid = menu.mid AND tablenum = '1';
+
+//查詢訂單
+
+SELECT tablenum, sum(amount) as total FROM
+(
+SELECT tablenum, pname,num,price,num*price as amount FROM addorder,menu WHERE addorder.mid = menu.mid AND tablenum = '1'
+)as a;
+
+//查詢總金額

@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>美食餐廳</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="./bootstrap.min_new.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+  <style>
+    .A1 {
+      /* background-image: url(./img/nick-karvounis-Ciqxn7FE4vE-unsplash.png);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover; */
+      background-color: rgb(252, 211, 211)
+    }
+    #demo{
+      background-color:rgb(255, 255, 255);
+      float:left;
+      width: 250px;
+      position: sticky;
+      top: 100px;
+      left: 20px;
+    }
+    #demo2{
+      background-color:rgb(255, 255, 255);
+      float:right;
+      width: 250px;
+      position: sticky;
+      top: 100px;
+    }
+    
+    .wrap_inner {
+      border: 3px solid rgb(0, 0, 0);
+      background-image: url(./img/My\ project-1.png);
+      background-repeat:no-repeat;
+      /* background-attachment:fixed; */
+      background-position:center;
+      background-size: 220px ;
+      background-color: #F3FDE0;
+      position: sticky;
+      top: 0;
+      padding: 0 30px;
+      
+      padding-top: 30px;
+      /* padding-bottom: 10px; */
+    }
+
+    .container{
+      background-color: rgba(255, 255, 255, 0.700);
+
+    }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 5px 3px;
+      font-weight: 400;
+      text-align: left;
+      white-space: nowrap;
+      vertical-align: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      padding: 2px 13px;
+      font-size: 14px;
+      line-height: 30px;
+      min-height: 35px;
+      border-radius: 2px;
+      transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+      color: #ffffff;
+      background-color: rgb(148, 190, 214);
+      border-radius: 8px;
+      cursor: pointer;
+      letter-spacing: 2px;
+      box-shadow: 2px 2px 3px grey;
+      border: none;
+      padding-right: 11px;
+
+    }
+   
+
+    h1 {
+
+      -webkit-text-stroke: 2px #000000;
+      color: rgb(255, 255, 255);
+
+    }
+
+    .card {
+      background-color: aliceblue;
+    }
+
+    input[type='number'] {
+      width: 100px;
+    }
+
+
+    .btnclass {
+      float: right;
+
+    }
+
+    .btnicon {
+      position: relative;
+    }
+
+    #moneyicon {
+
+      position: absolute;
+      top: 7px;
+      left: 1px;
+      
+    }
+    #outicon {
+
+      position: absolute;
+      top: 6px;
+      left: 6px;
+   
+    }
+    
+    #clricon {
+
+      position: absolute;
+      top: 7px;
+      left: 3px;
+      
+    }
+ 
+    #callicon {
+
+      position: absolute;
+      top: 7px;
+      left: 7px;
+      
+    }
+ 
+
+
+    .money {
+      padding-bottom: 6px;  
+    
+    }
+
+    .btncard{
+      /* background-color: #ffffff; */
+      padding-left: 50px;
+      
+    }
+  </style>
+</head>
+<script>
+
+
+
+
+   function loadDoc() {
+    const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+        
+        test = this.responseText;
+        console.log(test);
+        document.getElementById("demo").innerHTML = this.responseText;
+
+        }
+      
+        for (var a = 0; a < comNum1.length; a++) {
+        comNum1[a] = document.getElementById('oneNum' + (a + 1)).value;
+        comNum2[a] = document.getElementById('twoNum' + (a + 1)).value;
+        comNum3[a] = document.getElementById('threeNum' + (a + 1)).value;
+        comNum4[a] = document.getElementById('fourNum' + (a + 1)).value;
+        comNum5[a] = document.getElementById('fiveNum' + (a + 1)).value;
+      }
+      
+
+      
+        arr = comNum1 +","+comNum2+","+comNum3+","+comNum4+","+comNum5;
+  
+        xhttp.open("POST", "work.php", true);
+       
+        xhttp.setRequestHeader("Content-type", "application/text");
+        xhttp.send(arr);
+    }
+   function loadDoc2() {
+    const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+        
+        test = this.responseText;
+        console.log(test);
+        document.getElementById("demo2").innerHTML = this.responseText;
+
+        }
+      
+        for (var a = 0; a < comNum1.length; a++) {
+        comNum1[a] = document.getElementById('oneNum' + (a + 1)).value;
+        comNum2[a] = document.getElementById('twoNum' + (a + 1)).value;
+        comNum3[a] = document.getElementById('threeNum' + (a + 1)).value;
+        comNum4[a] = document.getElementById('fourNum' + (a + 1)).value;
+        comNum5[a] = document.getElementById('fiveNum' + (a + 1)).value;
+      }
+        tablenum = document.getElementById("tablenum").value;
+
+
+        arr = comNum1 +","+comNum2+","+comNum3+","+comNum4+","+comNum5;
+
+        post = "tablenum="+ tablenum+"&arr="+arr;
+  
+        xhttp.open("POST", "order.php", true);
+       
+        // xhttp.setRequestHeader("Content-type", "application/text");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(post);
+        
+    }
+   function loadDoc3() {
+    const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+        
+        test = this.responseText;
+        console.log(test);
+        document.getElementById("demo2").innerHTML = this.responseText;
+
+        }
+      
+        
+        tablenum = document.getElementById("tablenum").value;
+
+
+        arr = "";
+
+        post = "tablenum="+ tablenum+"&arr="+arr;
+  
+        xhttp.open("POST", "order.php", true);
+       
+        // xhttp.setRequestHeader("Content-type", "application/text");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(post);
+        
+    }
+    
+</script>
+<body>
+
+  <div class="A1">
+   <div  id="demo">
+  </div> 
+   <div  id="demo2">
+  </div> 
+  <hr>
+    <div class="container">
+    
+
+      <div class="wrap_inner">
+
+        <h2>美味餐廳 點餐系統<span class="material-symbols-outlined">
+            restaurant
+          </span> </h2>
+        
+        桌號: <input id="tablenum" type="number" min="1" max="5" value="1">
+        
+
+
+        <div class="btnclass">
+          
+          <input class="money"  type="number" value="0" id="totalId" readonly><span>元</span>&nbsp;
+
+          <button class="btn btnicon" id="clrBtn"><span id="clricon" class="material-symbols-outlined">
+            backspace
+            </span>&nbsp;&nbsp;&nbsp;清空</button>
+          
+            <!-- <span id="moneyicon" class="material-symbols-outlined">
+              attach_money
+            </span>&nbsp;&nbsp; -->
+          
+
+          <button class="btn btnicon" id="outBtn"><span id="outicon" class="material-symbols-outlined">
+              shopping_cart
+            </span>
+            &nbsp;&nbsp;&nbsp;&nbsp;送出訂單
+          </button>
+          <button class="btn btnicon" id="callBtn"><span id="callicon" class="material-symbols-outlined">
+            face
+            </span>
+            &nbsp;&nbsp;&nbsp;&nbsp;呼叫服務員
+          </button>
+        </div>
+
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="nav_0" data-toggle="tab" href="#content_0" role="tab"
+              aria-controls="content_0" aria-selected="true">西式料理</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" id="nav_1" data-toggle="tab" href="#content_1" role="tab" aria-controls="content_1"
+              aria-selected="false">台式料理</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nav_2" data-toggle="tab" href="#contact_2" role="tab" aria-controls="contact_2"
+              aria-selected="false">日式料理</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nav_3" data-toggle="tab" href="#contact_3" role="tab" aria-controls="contact_3"
+              aria-selected="false">冷/熱飲</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nav_4" data-toggle="tab" href="#contact_4" role="tab" aria-controls="contact_4"
+              aria-selected="false">點心</a>
+          </li>
+        </ul>
+      </div>
+      <!-- ----------------------------------------- -->
+      <div class="tab-content" id="myTabContent">
+        <!--1 ----------------------------------------- -->
+        <div class="tab-pane fade show active" id="content_0" role="tabpanel" aria-labelledby="nav_0">
+
+          <div class="mt-5">
+            <h1 class="mt-3 mb-3 text-center">西式料理</h1>
+            <div class="card-columns">
+
+              <div class="card">
+                <img class="card-img-top" id="img11" src="./img/1-1.jpg" alt="商品1">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">雙層牛肉起士堡</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="0" id="oneVal1"
+                      readonly></h5>
+                    
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="2" value="0" id="oneNum1" min="0"  inputmode="numeric" oninput="sumData()"></h5>
+                    
+                    
+                    
+                    
+                    
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img12" src="./img/1-2.jpg" alt="商品2">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">美式牛排</h4>
+                  <h5 class="card-title text-center mb-0">
+                    單價 : <input type="number" size="2" value="45" id="oneVal2" readonly>
+                  </h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" id="oneNum2" min="0" oninput="sumData()"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img13" src="./img/1-3.jpg" alt="商品3">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">烤火雞</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="25" id="oneVal3"
+                      readonly>
+                  </h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="oneNum3"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img14" src="./img/1-4.jpg" alt="肉丸義大利麵">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">肉丸義大利麵</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="oneVal4"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="oneNum4"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img15" src="./img/1-5.jpg" alt="商品5">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">披薩</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="oneVal5"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="oneNum5"></h5>
+                </div>
+              </div>
+
+              <div class="card">
+                <img class="card-img-top " id="img16" src="./img/1-6.jpg" alt="商品6">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">炸雞(5塊)</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="oneVal6"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="oneNum6"></h5>
+                </div>
+              </div>
+
+              <div class="card">
+                <img class="card-img-top" id="img17" src="./img/1-7.jpg" alt="西班牙海鮮飯">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">西班牙海鮮飯</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="oneVal7"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="oneNum7"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img18" src="./img/1-8.jpg" alt="商品8">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">墨西哥捲餅</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="oneVal8"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="oneNum8"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img19" src="./img/1-9.jpg" alt="商品9">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">三明治套餐</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="oneVal9"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="oneNum9"></h5>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <!-- 2----------------------------------------- -->
+        <div class="tab-pane fade" id="content_1" role="tabpanel" aria-labelledby="nav_1">
+
+          <div class="mt-5">
+            <h1 class="mt-3 mb-3 text-center">台式料理</h1>
+            <div class="card-columns">
+
+              <div class="card">
+                <img class="card-img-top" id="img21" src="./img/2-1.jpg" alt="商品1">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">臭豆腐</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="twoVal1"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="twoNum1"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img22" src="./img/2-2.jpg" alt="商品2">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">滷肉飯</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="45" id="twoVal2"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="twoNum2"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img23" src="./img/2-3.jpg" alt="商品3">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">小籠包</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="25" id="twoVal3"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="twoNum3"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img24" src="./img/2-4.jpg" alt="商品4">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">炸醬麵</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="twoVal4"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="twoNum4"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img25" src="./img/2-5.jpg" alt="商品5">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">牛肉麵</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="twoVal5"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="twoNum5"></h5>
+                </div>
+              </div>
+
+              <div class="card">
+                <img class="card-img-top" id="img26" src="./img/2-6.jpg" alt="商品6">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">水餃</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="twoVal6"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="twoNum6"></h5>
+                </div>
+              </div>
+
+              <div class="card">
+                <img class="card-img-top" id="img27" src="./img/2-7.jpg" alt="商品7">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">擔仔麵</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="twoVal7"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="twoNum7"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img28" src="./img/2-8.jpg" alt="商品8">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">炒飯</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="twoVal8"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="twoNum8"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img29" src="./img/istockphoto-1272108611-612x612.jpg" alt="商品9">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">燒賣</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="twoVal9"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="twoNum9"></h5>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+
+        </div>
+        <!-- 3------------------------------------------ -->
+        <div class="tab-pane fade" id="contact_2" role="tabpanel" aria-labelledby="nav_2">
+          <div class="mt-5">
+            <h1 class="mt-3 mb-3 text-center">日式料理</h1>
+            <div class="card-columns">
+
+              <div class="card">
+                <img class="card-img-top" id="img31" src="./img/3-1.jpg" alt="商品1">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">天婦羅丼</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="threeVal1"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="threeNum1"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img32" src="./img/3-2.jpg" alt="商品2">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">生魚片拼盤</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="45" id="threeVal2"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="threeNum2"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img33" src="./img/3-3.jpg" alt="商品3">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">日式煎餃</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="25" id="threeVal3"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="threeNum3"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img34" src="./img/3-4.jpg" alt="商品4">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">可樂餅</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="threeVal4"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="threeNum4"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img35" src="./img/3-5.jpg" alt="商品5">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">牛肉丼</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="threeVal5"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="threeNum5"></h5>
+                </div>
+              </div>
+
+              <div class="card">
+                <img class="card-img-top" id="img36" src="./img/3-6.jpg" alt="商品6">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">日式炸雞</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="threeVal6"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="threeNum6"></h5>
+                </div>
+              </div>
+
+              <div class="card">
+                <img class="card-img-top" id="img37" src="./img/3-7.jpg" alt="商品7">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">拉麵</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="threeVal7"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="threeNum7"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img38" src="./img/3-8.jpg" alt="商品8">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">鰻魚飯</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="threeVal8"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="threeNum8"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img39" src="./img/3-9.jpg" alt="商品9">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">壽司</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="threeVal9"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="threeNum9"></h5>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- 4----------------------------------------- -->
+        <div class="tab-pane fade" id="contact_3" role="tabpanel" aria-labelledby="nav_3">
+          <div class="mt-5">
+            <h1 class="mt-3 mb-3 text-center">冷/熱飲</h1>
+
+            <div class="card-columns">
+
+              <div class="card">
+                <img class="card-img-top" id="41" src="./img/4-1.jpg" alt="商品1">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">果汁</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="fourVal1"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="fourNum1"></h5>
+                  </h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="42" src="./img/4-2.jpg" alt="商品2">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">芬達</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="45" id="fourVal2"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="fourNum2"></h5>
+                  </h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="43" src="./img/4-3.jpg" alt="商品3">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">啤酒</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="25" id="fourVal3"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="fourNum3"></h5>
+                  </h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="44" src="./img/4-4.jpg" alt="商品4">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">可爾必思</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="fourVal4"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="fourNum4"></h5>
+                  </h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="45" src="./img/4-5.jpg" alt="商品5">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">熱咖啡</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="fourVal5"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="fourNum5"></h5>
+                  </h5>
+                </div>
+              </div>
+
+              <div class="card">
+                <img class="card-img-top" id="46" src="./img/4-6.jpg" alt="商品6">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">奶茶</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="fourVal6"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="fourNum6"></h5>
+                  </h5>
+                </div>
+              </div>
+
+              <div class="card">
+                <img class="card-img-top" id="47" src="./img/4-7.jpg" alt="商品7">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">檸檬茶</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="fourVal7"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="fourNum7"></h5>
+                  </h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="48" src="./img/4-8.jpg" alt="商品8">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">可樂</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="fourVal8"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="fourNum8"></h5>
+                  </h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="49" src="./img/4-9.jpg" alt="商品9">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">雪碧</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="fourVal9"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="fourNum9"></h5>
+                  </h5>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- 5----------------------------------------- -->
+        <div class="tab-pane fade" id="contact_4" role="tabpanel" aria-labelledby="nav_4">
+          <div class="mt-5">
+            <h1 class="mt-3 mb-3 text-center">點心</h1>
+            <div class="card-columns">
+
+              <div class="card">
+                <img class="card-img-top" id="img51" src="./img/5-1.jpg" alt="商品1">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">雞塊</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="fiveVal1"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="fiveNum1"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img52" src="./img/5-2.jpg" alt="商品2">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">薯條</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="45" id="fiveVal2"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="fiveNum2"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img53" src="./img/5-3.jpg" alt="商品3">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">冰淇淋</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="25" id="fiveVal3"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="fiveNum3"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img54" src="./img/5-4.jpg" alt="商品4">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">蘋果派</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="fiveVal4"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="fiveNum4"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img55" src="./img/5-5.jpg" alt="商品5">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">熱狗</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="fiveVal5"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="fiveNum5"></h5>
+                </div>
+              </div>
+
+              <div class="card">
+                <img class="card-img-top" id="img56" src="./img/5-6.jpg" alt="商品6">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">蛋塔</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="fiveVal6"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="fiveNum6"></h5>
+                </div>
+              </div>
+
+              <div class="card">
+                <img class="card-img-top" id="img57" src="./img/5-7.jpg" alt="商品7">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">布丁</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="fiveVal7"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="fiveNum7"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img58" src="./img/5-8.jpg" alt="商品8">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">草莓蛋糕</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="fiveVal8"
+                      readonly></h5> 
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="fiveNum8"></h5>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" id="img59" src="./img/5-9.jpg" alt="商品9">
+                <div class="card-body">
+                  <h4 class="card-title text-center mb-0">甜甜圈</h4>
+                  <h5 class="card-title text-center mb-0">單價 : <input type="number" size="2" value="35" id="fiveVal9"
+                      readonly></h5>
+                  <h5 class="card-title text-center mb-0">
+                    數量 : <input type="number" size="4" value="0" min="0" oninput="sumData()" id="fiveNum9"></h5>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- ----------------------------------------- -->
+
+
+      </div>
+ 
+      <!-- ----------------------------------------- -->
+
+
+
+    </div>
+  </div>
+  <script>
+
+
+    var comVal1 = [90, 350, 3100, 230, 250, 240, 340, 185, 80];
+    var comVal2 = [50, 35, 55, 45, 150, 35, 45, 80, 60];
+    var comVal3 = [120, 250, 30, 90, 65, 50, 130, 300, 150];
+    var comVal4 = [35, 35, 90, 35, 60, 35, 35, 35, 35];
+    var comVal5 = [50, 35, 35, 60, 40, 40, 50, 60, 35];
+    var comNum1 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    var comNum2 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    var comNum3 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    var comNum4 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    var comNum5 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    function valData() {
+      for (var j = 0; j < comVal1.length; j++) {
+        document.getElementById('oneVal' + (j + 1)).value = comVal1[j];
+        document.getElementById('twoVal' + (j + 1)).value = comVal2[j];
+        document.getElementById('threeVal' + (j + 1)).value = comVal3[j];
+        document.getElementById('fourVal' + (j + 1)).value = comVal4[j];
+        document.getElementById('fiveVal' + (j + 1)).value = comVal5[j];
+
+      }
+
+    }
+
+    // function numData() {
+    //   for (var a = 0; a < comNum1.length; a++) {
+    //     comNum1[a] = document.getElementById('oneNum' + (a + 1)).value;
+    //     comNum2[a] = document.getElementById('twoNum' + (a + 1)).value;
+    //     comNum3[a] = document.getElementById('threeNum' + (a + 1)).value;
+    //     comNum4[a] = document.getElementById('fourNum' + (a + 1)).value;
+    //     comNum5[a] = document.getElementById('fiveNum' + (a + 1)).value;
+    //   }
+    // }
+
+    function sumData() {
+      for (var a = 0; a < comNum1.length; a++) {
+        comNum1[a] = document.getElementById('oneNum' + (a + 1)).value;
+        comNum2[a] = document.getElementById('twoNum' + (a + 1)).value;
+        comNum3[a] = document.getElementById('threeNum' + (a + 1)).value;
+        comNum4[a] = document.getElementById('fourNum' + (a + 1)).value;
+        comNum5[a] = document.getElementById('fiveNum' + (a + 1)).value;
+      }
+      var sum = 0;
+      for (i = 0; i < comVal1.length; i++) {
+        sum += comVal1[i] * comNum1[i];
+        sum += comVal2[i] * comNum2[i];
+        sum += comVal3[i] * comNum3[i];
+        sum += comVal4[i] * comNum4[i];
+        sum += comVal5[i] * comNum5[i];
+      }
+
+
+
+      
+      document.getElementById('totalId').value = sum;
+      loadDoc();
+
+    }
+    function clrData() {
+      for (var x = 0; x < comNum1.length; x++) {
+        document.getElementById('oneNum' + (x + 1)).value = 0;
+        document.getElementById('twoNum' + (x + 1)).value = 0;
+        document.getElementById('threeNum' + (x + 1)).value = 0;
+        document.getElementById('fourNum' + (x + 1)).value = 0;
+        document.getElementById('fiveNum' + (x + 1)).value = 0;
+
+      }
+
+
+
+      var sum = 0;
+      
+      document.getElementById('totalId').value = sum;
+      loadDoc();
+
+    }
+    function outData() {
+      for (var a = 0; a < comNum1.length; a++) {
+        comNum1[a] = document.getElementById('oneNum' + (a + 1)).value;
+        comNum2[a] = document.getElementById('twoNum' + (a + 1)).value;
+        comNum3[a] = document.getElementById('threeNum' + (a + 1)).value;
+        comNum4[a] = document.getElementById('fourNum' + (a + 1)).value;
+        comNum5[a] = document.getElementById('fiveNum' + (a + 1)).value;
+      }
+      var sum = 0;
+      for (i = 0; i < comVal1.length; i++) {
+        sum += comVal1[i] * comNum1[i];
+        sum += comVal2[i] * comNum2[i];
+        sum += comVal3[i] * comNum3[i];
+        sum += comVal4[i] * comNum4[i];
+        sum += comVal5[i] * comNum5[i];
+      }
+
+
+
+
+      if (confirm('總共' + sum + '元，確定要送出訂單嗎?') == true) {
+
+        alert('已送出訂單，餐點即將為您準備!');
+        
+        loadDoc2();
+        clrData();
+
+      } else {
+        alert('已取消訂單!如有疑問請呼叫服務員，我們將為您服務。');
+      }
+    }
+
+    
+
+    
+
+
+     
+  
+    document.getElementById('clrBtn').onclick = function (event) {
+      clrData();
+      
+
+    };
+
+    document.getElementById('outBtn').onclick = function () {
+      outData();
+    }
+    document.getElementById('callBtn').onclick = function () {
+      callData();
+    }
+    valData();
+
+    function doupdata(){
+        setTimeout(doupdata, 1000);
+        loadDoc3();
+      }
+      doupdata();
+
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
