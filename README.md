@@ -4,7 +4,7 @@
 廚房頁面:back.html  
 櫃台頁面:counter.html
 
-<img src="./img/0315.png" width="100%">
+<img src="./img/0315.PNG" width="100%">
 
 ## `專案介紹`
 
