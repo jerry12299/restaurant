@@ -1,4 +1,4 @@
-
+小專發表 餐廳點餐系統
 <img src="./img/0315.PNG" width="100%">
 
 ## `專案介紹`
@@ -20,10 +20,14 @@
 
 
 ## 專案展示
-![]()
 #### `點餐頁面`
+<img src="./img/0315_1.PNG" width="100%">
 
+#### `廚房頁面`
+<img src="./img/0315_2.PNG" width="100%">
 
+#### `櫃台頁面`
+<img src="./img/0315_3.PNG" width="100%">
 
 ## 專案執行
 
@@ -33,7 +37,7 @@
 廚房頁面:back.html  
 櫃台頁面:counter.html
 
-## Resource - 資料引用來源
+## Resource - 素材來源
 
 [unsplash](https://unsplash.com/)
 
